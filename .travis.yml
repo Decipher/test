@@ -108,14 +108,14 @@ before_script:
   - drupal-ti before_script
   # Current stable of Icon module has in issue on install that breaks the tests,
   # so we need ensure the dev version is downloaded.
-  - drush use $DRUPAL_TI_DRUPAL_DIR#default; drush dl icon --dev -y
+  - drush use $TRAVIS_BUILD_DIR/../$DRUPAL_TI_ENVIRONMENT#default; drush dl icon --dev -y
 
 script:
   - drupal-ti script
 
 after_script:
   - drupal-ti after_script
-  - cd "$DRUPAL_TI_DRUPAL_DIR/$DRUPAL_TI_MODULES_PATH/$DRUPAL_TI_MODULE_NAME"
+  - pwd
   - cd "$DRUPAL_TI_BEHAT_DIR"
   - ls la
 
