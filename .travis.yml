@@ -109,8 +109,7 @@ install:
 
 before_script:
   - drupal-ti before_script
-  - drush
-  - drush sa
+  - pwd
 
 script:
   - drupal-ti script
