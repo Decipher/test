@@ -109,6 +109,8 @@ install:
 
 before_script:
   - drupal-ti before_script
+  - drush
+  - drush sa
 
 script:
   - drupal-ti script
