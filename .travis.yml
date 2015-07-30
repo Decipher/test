@@ -112,6 +112,7 @@ before_script:
 
 script:
   - drupal-ti script
+  - pwd
 
 after_script:
   - drupal-ti after_script
