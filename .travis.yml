@@ -115,8 +115,7 @@ script:
 
 after_script:
   - drupal-ti after_script
-  - pwd
-  - cd "$DRUPAL_TI_BEHAT_DIR"
+  - cd behat
   - ls la
 
 notifications:
