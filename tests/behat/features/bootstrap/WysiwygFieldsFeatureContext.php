@@ -23,26 +23,6 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
   }
 
   /**
-   * @param $lambda
-   *
-   * @return bool
-   */
-  public function spin($lambda) {
-    while (TRUE) {
-      try {
-        if ($lambda($this)) {
-          return TRUE;
-        }
-      }
-      catch (Exception $e) {
-        // do nothing
-      }
-
-      sleep(1);
-    }
-  }
-
-  /**
    * @param $field
    * @param $button
    *
