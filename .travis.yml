@@ -98,7 +98,7 @@ mysql:
 before_install:
   - composer self-update
   - cd ./tests
-  - composer global require "lionsad/drupal_ti:1.*"
+  - composer global require "Decipher/drupal_ti:1.*"
   - drupal-ti before_install
 
 install:
@@ -108,7 +108,7 @@ before_script:
   - drupal-ti before_script
   # Current stable of Icon module has in issue on install that breaks the tests,
   # so we need ensure the dev version is downloaded.
-  - cd $TRAVIS_BUILD_DIR/../$DRUPAL_TI_ENVIRONMENT/drupal/sites/default; drush sa @self; drush dl icon -y; cd -
+  - drush use $TRAVIS_BUILD_DIR/../$DRUPAL_TI_ENVIRONMENT/drupal#default; drush dl icon --dev -y
 
 script:
   - drupal-ti script
