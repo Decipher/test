@@ -112,7 +112,9 @@ before_script:
 
 script:
   - drupal-ti script
-  - pwd
+  - cd behat
+  - ls -la
+  - cat behat.yml
 
 after_script:
   - drupal-ti after_script
