@@ -116,7 +116,7 @@ script:
 after_script:
   - drupal-ti after_script
   - cd behat
-  - ls la
+  - ls -la
 
 notifications:
   email: false
