@@ -115,7 +115,9 @@ script:
 
 after_script:
   - drupal-ti after_script
-  - pwd; ls -la
+  - cd "$DRUPAL_TI_DRUPAL_DIR/$DRUPAL_TI_MODULES_PATH/$DRUPAL_TI_MODULE_NAME"
+  - cd "$DRUPAL_TI_BEHAT_DIR"
+  - ls la
 
 notifications:
   email: false
