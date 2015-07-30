@@ -109,7 +109,9 @@ install:
 
 before_script:
   - drupal-ti before_script
-  - pwd
+  - cd ../../drupal-7/drupal/sites/default
+  - drush dl icon --dev -y
+  - cd ../../../../test/tests
 
 script:
   - drupal-ti script
