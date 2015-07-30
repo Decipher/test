@@ -11,15 +11,15 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
    * @BeforeSuite
    */
   public static function setup() {
-    //module_enable(array('wysiwyg_fields_test'));
+    module_enable(array('wysiwyg_fields_test'));
   }
 
   /**
    * @AfterSuite
    */
   public static function tearDown() {
-    //module_disable(array('wysiwyg_fields_test'));
-    //drupal_uninstall_modules(array('wysiwyg_fields_test'));
+    module_disable(array('wysiwyg_fields_test'));
+    drupal_uninstall_modules(array('wysiwyg_fields_test'));
   }
 
   /**
