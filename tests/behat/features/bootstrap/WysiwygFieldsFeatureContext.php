@@ -8,14 +8,14 @@ use Behat\Behat\Context\SnippetAcceptingContext;
  */
 class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
   /**
-   * @BeforeFeature
+   * @BeforeSuite
    */
   public static function setup() {
     //module_enable(array('wysiwyg_fields_test'));
   }
 
   /**
-   * @AfterFeature
+   * @AfterSuite
    */
   public static function tearDown() {
     //module_disable(array('wysiwyg_fields_test'));
