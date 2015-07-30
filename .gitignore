@@ -1,0 +1,3 @@
+.DS_Store
+tests/behat/bin
+tests/behat/vendor

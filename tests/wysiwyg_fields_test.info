@@ -1,0 +1,6 @@
+name = Wysiwyg Fields tests
+description = Support module for Wysiwyg Fields related testing.
+package = Testing
+dependencies[] = wysiwyg_fields
+core = 7.x
+hidden = TRUE
