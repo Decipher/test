@@ -56,7 +56,7 @@ env:
     # These arguments are passed to the bin/behat command.
     - DRUPAL_TI_BEHAT_ARGS=""
     # Specify the filename of the behat.yml with the $DRUPAL_TI_DRUPAL_DIR variables.
-    - DRUPAL_TI_BEHAT_YML="behat.yml.dist"
+    - DRUPAL_TI_BEHAT_YML="behat.yml"
     # This is used to setup Xvfb.
     - DRUPAL_TI_BEHAT_SCREENSIZE_COLOR="1280x1024x16"
     # The version of seleniumthat should be used.
