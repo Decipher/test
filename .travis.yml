@@ -116,7 +116,7 @@ script:
 after_script:
   - drupal-ti after_script
   - cd behat
-  - ls -la ./vendor/bin
+  - ls -la ./vendor
 
 notifications:
   email: false
