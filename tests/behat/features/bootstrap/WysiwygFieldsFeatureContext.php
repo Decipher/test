@@ -2,6 +2,7 @@
 
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Testwork\Hook\Scope\BeforeSuiteScope;
 
 /**
  * Defines application features from the specific context.
@@ -9,9 +10,11 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
   /**
    * @BeforeSuite
+   *
+   * @param BeforeSuiteScope $event
    */
-  public static function setup() {
-    module_enable(array('wysiwyg_fields_test'));
+  public static function setup(BeforeSuiteScope $event) {
+    print_r($GLOBALS);exit;
   }
 
   /**
