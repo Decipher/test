@@ -14,7 +14,7 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
    * @param BeforeSuiteScope $event
    */
   public static function setup(BeforeSuiteScope $event) {
-    print_r($GLOBALS);exit;
+    module_enable(array('wysiwyg_fields_test'));
   }
 
   /**
