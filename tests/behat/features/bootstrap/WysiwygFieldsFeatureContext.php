@@ -10,10 +10,8 @@ use Behat\Testwork\Hook\Scope\BeforeSuiteScope;
 class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
   /**
    * @BeforeSuite
-   *
-   * @param BeforeSuiteScope $event
    */
-  public static function setup(BeforeSuiteScope $event) {
+  public static function setup() {
     module_enable(array('wysiwyg_fields_test'));
   }
 
@@ -39,13 +37,4 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
       ->find('css', "#cke_{$field} .cke_button__{$button}")
       ->click();
   }
-
-  /**
-   * @param $name
-   *
-   * @Then I should see the :name CKEditor dialog
-   */
-//  public function ckeditorDialog($name) {
-//    $this->assertSession()->
-//  }
 }

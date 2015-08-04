@@ -55,9 +55,6 @@ function wysiwyg_fields_test_install() {
   $form_state['values']['name']                                 = 'wysiwyg_fields_test';
   $form_state['values']['input_formats']['wysiwyg_fields_test'] = 'wysiwyg_fields_test';
   $form_state['values']['toolbar']                              = "[['wysiwyg_fields-node-wysiwyg_fields_test-wysiwyg_fields_test_image']]";
-  $form_state['values']['loadPlugins']['lineutils']             = 'lineutils';
-  $form_state['values']['loadPlugins']['widget']                = 'widget';
-  //  $form_state['values']['loadPlugins']['wysiwyg_fields']        = 'wysiwyg_fields';
   drupal_form_submit('ckeditor_admin_profile_form', $form_state, 'add');
 }
 
