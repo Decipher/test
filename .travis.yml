@@ -59,8 +59,8 @@ env:
     # The version of seleniumthat should be used.
     - DRUPAL_TI_BEHAT_SELENIUM_VERSION="2.44"
     # Set DRUPAL_TI_BEHAT_DRIVER to "selenium" to use "firefox" or "chrome" here.
-    - DRUPAL_TI_BEHAT_DRIVER="firefox"
-    - DRUPAL_TI_BEHAT_BROWSER="phantomjs"
+    - DRUPAL_TI_BEHAT_DRIVER="phantomjs"
+    - DRUPAL_TI_BEHAT_BROWSER="firefox"
 
     # PHPUnit specific commandline arguments.
     - DRUPAL_TI_PHPUNIT_ARGS=""
