@@ -24,6 +24,37 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
   }
 
   /**
+   * @param $lambda
+   *
+   * @return bool
+   */
+  public function spin($lambda) {
+    while (TRUE) {
+      try {
+        if ($lambda($this)) {
+          return TRUE;
+        }
+      }
+      catch (Exception $e) {
+        // do nothing
+      }
+
+      sleep(1);
+    }
+  }
+
+  /**
+   * @param $element
+   *
+   * @Then I wait until :element is visible
+   */
+  public function waitCss($element) {
+    $this->spin(function($context) use ($element) {
+      return $context->getSession()->getPage()->find('css', $element);
+    });
+  }
+
+  /**
    * @param $field
    * @param $button
    *

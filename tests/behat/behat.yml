@@ -14,3 +14,10 @@ default:
     Drupal\DrupalExtension:
       api_driver: "drupal"
       drush_driver: "drush"
+
+phantomjs:
+  extensions:
+    Behat\MinkExtension:
+      selenium2:
+        wd_host: http://localhost:8643/wd/hub
+      browser_name: phantomjs
