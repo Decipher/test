@@ -88,7 +88,7 @@ function wysiwyg_fields_field_widget_settings_form($field, $instance) {
   unset($widget_types['wysiwyg_fields']);
 
   $widget_type = isset($settings['wysiwyg_fields']['widget_type']) && !empty($settings['wysiwyg_fields']['widget_type']) ? $settings['wysiwyg_fields']['widget_type'] : $field_info['default_widget'];
-  // Get widget type from AJAX request if available..
+  // Get widget type from AJAX request if available.
   if (isset($_POST['instance']['widget']['settings']['wysiwyg_fields']['widget_type'])) {
     $widget_type = filter_xss($_POST['instance']['widget']['settings']['wysiwyg_fields']['widget_type']);
   }
