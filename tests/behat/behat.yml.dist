@@ -11,8 +11,7 @@ default:
     Behat\MinkExtension:
       base_url: "$DRUPAL_TI_WEBSERVER_URL:$DRUPAL_TI_WEBSERVER_PORT/"
       goutte: ~
-      selenium2:
-        wd_host: "$DRUPAL_TI_WEBSERVER_URL:4444"
+      selenium2: ~
       browser_name: "$DRUPAL_TI_BEHAT_BROWSER"
     Drupal\DrupalExtension:
       api_driver: "drupal"
