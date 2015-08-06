@@ -13,6 +13,7 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
    */
   public static function setup() {
     module_enable(array('wysiwyg_fields_test'));
+    drupal_flush_all_caches();
   }
 
   /**
@@ -21,37 +22,6 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
   public static function tearDown() {
     module_disable(array('wysiwyg_fields_test'));
     drupal_uninstall_modules(array('wysiwyg_fields_test'));
-  }
-
-  /**
-   * @param $lambda
-   *
-   * @return bool
-   */
-  public function spin($lambda) {
-    while (TRUE) {
-      try {
-        if ($lambda($this)) {
-          return TRUE;
-        }
-      }
-      catch (Exception $e) {
-        // do nothing
-      }
-
-      sleep(1);
-    }
-  }
-
-  /**
-   * @param $element
-   *
-   * @Then I wait until :element is visible
-   */
-  public function waitCss($element) {
-    $this->spin(function($context) use ($element) {
-      return $context->getSession()->getPage()->find('css', $element);
-    });
   }
 
   /**
