@@ -2,11 +2,11 @@ default:
   suites:
     default:
       contexts:
-        - WysiwygFieldsFeatureContext
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
+        - WysiwygFieldsFeatureContext
   extensions:
     Behat\MinkExtension:
       base_url: "$DRUPAL_TI_WEBSERVER_URL:$DRUPAL_TI_WEBSERVER_PORT/"
