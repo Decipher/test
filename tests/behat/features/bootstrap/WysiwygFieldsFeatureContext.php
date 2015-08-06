@@ -33,6 +33,7 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
    * @Todo Make arguments more human readable.
    */
   public function ckeditorButton($field, $button) {
+    $this->getSession()->wait(5000, "jQuery('#cke_{$field} .cke_button__{$button}').length > 0");
     $this->getSession()
       ->getPage()
       ->find('css', "#cke_{$field} .cke_button__{$button}")
