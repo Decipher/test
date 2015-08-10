@@ -33,10 +33,35 @@ class WysiwygFieldsFeatureContext extends RawDrupalContext implements SnippetAcc
    * @Todo Make arguments more human readable.
    */
   public function ckeditorButton($field, $button) {
-    $this->getSession()->wait(5000, "jQuery('#cke_{$field} .cke_button__{$button}').length > 0");
+    $this->getSession()
+      ->wait(5000, "jQuery('#cke_{$field} .cke_button__{$button}').length > 0");
     $this->getSession()
       ->getPage()
       ->find('css', "#cke_{$field} .cke_button__{$button}")
       ->click();
+  }
+
+  /**
+   * @param $field
+   *
+   * @Then I switch to :field CKEditor IFrame
+   */
+  public function ckeditorIFrame($field) {
+    $session = $this->getSession();
+    if (!$session->getPage()
+      ->has('css', "iframe[name='cke_iframe_{$field}']")
+    ) {
+      $this->getSession()
+        ->getDriver()
+        ->evaluateScript("jQuery('#cke_{$field} iframe').attr('name', 'cke_iframe_{$field}');");
+    }
+    $this->getSession()->switchToIFrame("cke_iframe_{$field}");
+  }
+
+  /**
+   * @Then I leave the IFrame
+   */
+  public function ckeditorIFrameLeave() {
+    $this->getSession()->switchToIFrame();
   }
 }
