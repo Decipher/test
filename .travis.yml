@@ -89,6 +89,7 @@ env:
     # Use phpunit-core to test modules with phpunit with Drupal 8 core.
     #- DRUPAL_TI_RUNNERS="phpunit-core"
     - DRUPAL_TI_RUNNERS="simpletest behat"
+    - DRUPAL_TI_BEHAT_BROWSER="chrome"
 
 mysql:
   database: drupal_travis_db
