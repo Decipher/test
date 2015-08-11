@@ -21,7 +21,7 @@ matrix:
     - php: 5.3
       env: DRUPAL_TI_RUNNERS="simpletest"
 
-  exclide:
+  exclude:
     - php: 5.5
       env: DRUPAL_TI_BEHAT_BROWSER="chrome"
 
